@@ -1,0 +1,23 @@
+{
+  "name": "bootstrap-amd",
+  "version": "0.0.1",
+  "authors": [
+    "Dmitrii Chekaliuk <d.chekaliuk@invisilabs.com>"
+  ],
+  "description": "AMDifier for Bootstrap JS plugins",
+  "main": "main.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "bootstrap",
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/InvisiLabs/bootstrap-amd",
+  "dependencies": {
+      "bootstrap": "*"
+  },
+  "ignore": []
+}
+
