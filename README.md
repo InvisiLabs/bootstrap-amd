@@ -1,32 +1,13 @@
-bootstrap-amd
+Bootstrap-AMD
 =============
 
-AMDifier for Bootstrap JS plugins
+AMD-ready versions of Bootstrap jQuery plugins
 
-Usage
------
-
-You can download and use this script manually:
+Installing
+------------
 
 ```bash
-$ git clone https://github.com/InvisiLabs/bootstrap-amd
-$ node bootsrap-amd/main.js path/to/bootstrap
-```
-
-... or hook it into Bower's package installation process, so every time you install or update `bootstrap` or `bootstrap-amd`, it will populate AMD versions of Bootstrap plugins. In order do this, create `.bowerrc` in your project's root directory with following contents:
-
-```json
-{
-    "scripts": {
-        "postinstall": "bash -c \"(echo '%' | grep -Eq '\\bbootstrap(-amd)?\\b') && node bower_components/bootstrap-amd/main.js bower_components/bootstrap\""
-    }
-}
-```
-
-... and then install package using Bower:
-
-```bash
-$ bower install bootstrap-amd
+$ bower install bootstrap-amd --save
 ```
 
 Configuring AMD loader (RequireJS)
@@ -34,18 +15,49 @@ Configuring AMD loader (RequireJS)
 
 ```javascript
 requirejs.config({
-    paths: {
-        bootstrap: 'bower_components/bootstrap-amd/js'
-    }
+    packages: [
+        {
+            name: 'jquery',
+            location: 'bower_components/jquery/src',
+            main: 'jquery'
+        }, {
+            name: 'sizzle',
+            location: 'bower_components/jquery/src/sizzle/dist',
+            main: 'sizzle'
+        }, {
+            name: 'bootstrap',
+            location: 'bower_components/bootstrap-amd/lib',
+            main: 'bootstrap'
+        }
+    ]
 });
 ```
 
 Referencing Bootstrap plugins from your module
 ----------------------------------------------
 
+You can require particular modules
+
 ```javascript
-define(['jquery', 'bootstrap/tooltip'], function ($) {
-    $('#some-selector').tooltip();
+define(['jquery/core/init', 'bootstrap/tooltip', 'bootstrap/modal'], function ($) {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#my-modal').modal();
 });
 ```
+
+... or `bootstrap` meta-module to load all plugins
+
+```javascript
+define(['jquery/core/init', 'bootstrap'], function ($) {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#my-modal').modal();
+});
+```
+
+Versioning
+----------
+
+Bootstrap-AMD uses [Semantic Versioning](http://semver.org) with build
+metadata (e.g. `1.0.0+bootstrap.3.3.4`) to indicate Bootstrap version
+the code is based on.
 

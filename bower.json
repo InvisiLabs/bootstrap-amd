@@ -1,23 +1,40 @@
 {
   "name": "bootstrap-amd",
-  "version": "0.0.1",
-  "authors": [
-    "Dmitrii Chekaliuk <d.chekaliuk@invisilabs.com>"
-  ],
-  "description": "AMDifier for Bootstrap JS plugins",
-  "main": "main.js",
-  "moduleType": [
-    "node"
-  ],
+  "version": "1.0.0+bootstrap.3.3.4",
+  "license": "MIT",
+  "description": "AMD-ready versions of Bootstrap jQuery plugins",
   "keywords": [
     "bootstrap",
+    "amd",
+    "js"
+  ],
+  "homepage": "https://github.com/InvisiLabs/bootstrap-amd",
+  "authors": [
+    "Dmytro Chekaliuk <d.chekaliuk@invisilabs.com>"
+  ],
+  "moduleType": [
     "amd"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/InvisiLabs/bootstrap-amd",
+  "main": [
+    "lib/affix.js",
+    "lib/alert.js",
+    "lib/bootstrap.js",
+    "lib/button.js",
+    "lib/carousel.js",
+    "lib/collapse.js",
+    "lib/dropdown.js",
+    "lib/modal.js",
+    "lib/popover.js",
+    "lib/scrollspy.js",
+    "lib/tab.js",
+    "lib/tooltip.js",
+    "lib/transition.js"
+  ],
+  "ignore": [
+    "/.*"
+  ],
   "dependencies": {
-      "bootstrap": "*"
-  },
-  "ignore": []
+    "jquery": ">= 2.1.0"
+  }
 }
 
