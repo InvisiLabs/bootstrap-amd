@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-amd",
-  "version": "1.0.0+bootstrap.3.3.4",
+  "version": "1.0.1+bootstrap.3.3.4",
   "license": "MIT",
   "description": "AMD-ready versions of Bootstrap jQuery plugins",
   "keywords": [
